@@ -3,6 +3,7 @@
 	<title id="title">Abrahamifyer</title>
 	<script>
 	function abrahamify(){
+	  //geting Inputs from Html
 	  let person = document.getElementById("person").value;
 	  var pronoun = document.getElementById('pronoun').checked;
 	  let Name = document.getElementById('Name').value;
@@ -20,17 +21,21 @@
 		input=input.replaceAll('togethis','together');
 		input=input.replaceAll('fathis','father');
 	  }
+ 	  //The switching.
 	  input=input.replaceAll(Name.toLowerCase(),'ADIN')
 	  input=input.replaceAll(Name,'ADIN');
 	  input=input.replaceAll(person,Name);
 	  input=input.replaceAll('ADIN',person);
+	  //outputs
 	  document.getElementById('out').innerHTML = input;
 	} 
+	//updates The Title and button to the selected person
 	function updatebutton(){
 	  let per = document.getElementById("person").value;
 	  document.getElementById("buttonn").innerHTML = per+"ify";
 	  document.getElementById("title").innerHTML = per+"ifyer";
 	}
+	//sets the interval for update button
 	window.onload = function(){
 		setInterval(updatebutton,100);
 		updatebutton();
